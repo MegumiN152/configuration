@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>注册用户</h1>
+    <form action="#" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        用户名：<input type="text" name="name" style="width: 150px"/><br/><br/>
+        电邮：<input type="text" name="email" style="width: 150px"/><br/><br/>
+        年龄：<input type="text" name="age" style="width: 150px"/><br/><br/>
+        职位：<input type="text" name="job" style="width: 150px"/><br/><br/>
+        头像：<input type="file" name="header" style="width: 150px"/><br/><br/>
+        宠物：<input type="file" name="pet" style="width: 150px" multiple/><br/><br/>
+        <input type="submit" value="上传"/>
+    </form>
+</div>
+</body>
+</html>

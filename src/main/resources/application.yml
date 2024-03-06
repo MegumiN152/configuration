@@ -1,0 +1,78 @@
+monster:
+  id: 100
+  name: 牛魔王
+  age: 500
+  isMarried: true
+  birth: 2020/01/01
+  car: {name: 宝马,price: 1000000}
+  skill: [牛魔拳,牛魔斩,牛魔死了]
+  hobby:
+    - 打架
+    - 吃人
+    - 睡觉
+  wife: {no1: 玉面护理,no2: 铁扇公主,no3: 白骨精}
+  salaries: [1000,2000,3000,4000,5000]
+  cars:
+    car1:
+      - {name: 宝马,price: 1000000}
+      - {name: 奔驰,price: 2000000}
+      - name: 保时捷
+        price: 4099420
+    car2:
+      - { name: 宝马,price: 1000000 }
+      - { name: 奔驰,price: 2000000 }
+      - name: 保时捷
+        price: 4099420
+
+server:
+  servlet:
+    context-path: /hhweb
+    encoding:
+      charset: UTF-8
+  port: 9999
+  tomcat:
+    threads:
+      max: 100
+      min-spare: 10
+spring:
+  mvc:
+    static-path-pattern: /res/**
+    hiddenmethod:
+      filter:
+        enabled: true
+    contentnegotiation:
+      favor-parameter: true
+    view:
+      prefix: /res/
+      suffix: .html
+  web:
+    resources:
+      static-locations: ["classpath:/META-INF/",
+                         "classpath:/public/",
+                         "classpath:/resources/",
+                         "classpath:/static/" ]
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: 123
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+#
